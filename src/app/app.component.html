@@ -1,9 +1,7 @@
 <main>
-    @if(book) {
-        <bm-book-details (leave)="showList()" [book] ="book"></bm-book-details>
-    }
-
-    @else {
-        <bm-book-list (selectBook)="showDetails($event)"></bm-book-list>
-    }
+    <nav>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/books">Books</a>
+    </nav>
+    <router-outlet></router-outlet>
 </main>  

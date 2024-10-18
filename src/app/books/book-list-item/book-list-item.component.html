@@ -1,10 +1,10 @@
 
 @if(book) {
-    <div class="list-item">
+    <a [routerLink]="book.isbn" class="list-item">
         @if (book.thumbnailUrl)
             {<img [src]="book.thumbnailUrl" alt="Cover">}
-        <h1>Books</h1>
-        <h2>{{ book.title }}</h2>
+
+            <h2>{{ book.title }}</h2>
 
         @if (book.subtitle)
            
@@ -18,5 +18,7 @@
         { <li>{{ author }}</li>}
         </ul>
         <div>ISBN {{ book.isbn }}</div>
-    </div>
-    }
+        
+    </a>
+   
+}
