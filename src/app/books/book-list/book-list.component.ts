@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core'; 
+import { Component} from '@angular/core'; 
 import { Book } from '../../shared/book';
 import { BookStoreService } from '../../shared/book-store.service';
 
@@ -11,13 +11,8 @@ export class BookListComponent {
 
   books: Book[] = [];
   
-  @Output() selectBook = new EventEmitter<Book>();
-
   constructor(private service : BookStoreService) {
    this.books = this.service.getAll();
   }
   
-  doSelect(book: Book) {
-    this.selectBook.emit(book);
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { Book } from '../../shared/book';
 import { BookStoreService } from '../../shared/book-store.service';
 import { ActivatedRoute } from '@angular/router';
@@ -18,9 +18,4 @@ export class BookDetailsComponent {
     this.book = this.service.getSingle(isbn);
   }
 
-  @Output() leave = new EventEmitter<void>();
-
-  doLeave() {
-    this.leave.emit();
-  }
 }
